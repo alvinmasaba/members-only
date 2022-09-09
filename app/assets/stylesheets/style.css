@@ -1,0 +1,31 @@
+/* Font families */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Roboto&family=Heebo&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow: auto;
+  width: 100%;
+}
+
+/* HEADER */
+
+.navbar {
+  height: 50px;
+  padding: 0 1.5rem;
+}
+
+.navbar .container-fluid {
+  gap: 3rem;
+}
+
+.navbar-nav {
+  gap: 2rem;
+  font-size: 20px;
+}
