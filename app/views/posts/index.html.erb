@@ -3,12 +3,13 @@
 <h1>Posts</h1>
 
 <div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
+  <ol>
+    <% @posts.each do |post| %>
+      <li><%= link_to post.title, post %> 
+        <% if user_signed_in? %>
+          - <em><strong><%= User.find(post.user_id).username %></strong>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
 </div>
-
-<% if user_signed_in? %>
-  <%= link_to "New post", new_post_path %>
-<% end %>
-

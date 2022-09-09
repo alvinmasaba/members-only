@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @posts = Post.all
+  end
+
+  def show
   end
 
   # GET /posts/new
@@ -26,6 +29,27 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def edit
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path, status: :see_other
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
