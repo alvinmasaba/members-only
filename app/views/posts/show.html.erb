@@ -5,6 +5,7 @@
 <div>
   <% if current_user.id == @post.user_id %>
     <%= link_to "Edit this post", edit_post_path(@post) %>
+    <br>
     <%= link_to "Delete this Post", 
         post_path,
         data: {
@@ -12,6 +13,6 @@
                   turbo_confirm: "Are you sure?"
                 } %> 
   <% end %>
-
+  <br>
   <%= link_to "Back to posts", posts_path %>
 </div>

@@ -14,11 +14,22 @@ body {
   width: 100%;
 }
 
+.main-container {
+  display: grid;
+  background-color: rgba(255,255,255,0.95);
+  margin: 0 1rem;
+  /*border-width: 50px;
+  border-style: solid;
+  /*border-image: url("floral-bg.jpg") 40 40 3 round;*/
+}
+
 /* HEADER */
 
 .navbar {
   height: 50px;
   padding: 0 1.5rem;
+  margin: 0;
+  background-color: rgb(25, 25, 146);
 }
 
 .navbar .container-fluid {
@@ -28,4 +39,21 @@ body {
 .navbar-nav {
   gap: 2rem;
   font-size: 20px;
+  align-items: center;
+}
+
+.header-title {
+  margin: 0;
+  padding: 0;
+  right: 922px;
+  position: absolute;
+}
+.posts-index-title {
+  justify-self: center;
+}
+
+.posts-index-container {
+  justify-self: center;
+  display: grid;
+  padding: 2rem;
 }

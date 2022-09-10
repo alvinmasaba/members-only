@@ -1,15 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<div id="posts">
-  <ol>
+<div id="posts" class="posts-index-container">
     <% @posts.each do |post| %>
-      <li><%= link_to post.title, post %> 
+      <div class="posts-index-post"><%= link_to post.title, post %> 
         <% if user_signed_in? %>
           - <em><strong><%= User.find(post.user_id).username %></strong>
         <% end %>
-      </li>
+      </div>
     <% end %>
-  </ol>
 </div>
