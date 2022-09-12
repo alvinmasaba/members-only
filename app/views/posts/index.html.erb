@@ -1,11 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<div id="posts" class="posts-index-container">
-    <% @posts.each do |post| %>
-      <div class="posts-index-post"><%= link_to post.title, post %> 
+<ul id="posts" class="list-group list-group-flush">
+    <% @posts.order('created_at DESC').each do |post| %>
+      <li class="list-group-item"><%= link_to post.title, post %>
         <% if user_signed_in? %>
-          - <em><strong><%= User.find(post.user_id).username %></strong>
+          - <%= User.find(post.user_id).username %>
         <% end %>
-      </div>
+      </li>
     <% end %>
-</div>
+</ul>

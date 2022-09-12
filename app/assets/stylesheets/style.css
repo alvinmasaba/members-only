@@ -53,7 +53,8 @@ body {
 }
 
 .posts-index-container {
-  justify-self: center;
   display: grid;
   padding: 2rem;
+  width: 50%;
+  gap: 5px;
 }

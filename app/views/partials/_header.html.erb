@@ -7,7 +7,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
-            Welcome to the Club <%= current_user.username.titleize %>
+            Welcome to the<strong> Club</strong> <%= current_user.username.titleize %>
           </li>
 
           <li class="nav-item">
@@ -31,7 +31,7 @@
             <%= link_to "Become a Member", new_user_registration_path %>
           </li>
 
-          <p class="header-title nav-item">The Club </p>
+          <p class="header-title nav-item"><strong>The Club</strong></p>
           
         <% end %>
       </ul>
