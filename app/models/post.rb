@@ -1,6 +1,18 @@
 class Post < ApplicationRecord
+  belongs_to :user
   validates :title, presence: true
   validates :body, presence: true
   
-  belongs_to :user
+  def self.search(search)
+    if search
+      post_id = Post.find_by(title: search)
+        if post_id
+          self.where(id: post_id)
+        else
+          @posts = Post.all
+        end
+    else
+      @posts = Post.all
+    end
+  end
 end
