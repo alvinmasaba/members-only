@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   
   def self.search(search)
     if search
-      post_id = Post.find_by(title: search)
+      post_id = Post.where("title like ?", "%#{search}%")
         if post_id
           self.where(id: post_id)
         else
