@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <ul id="posts" class="list-group list-group-flush">
+    <h1 class= "posts-index-header">Latest Posts</h1>
     <% @posts.order('created_at DESC').each do |post| %>
-      <li class="list-group-item"><%= link_to post.title, post %>
+      <li class="list-group-item posts-list-item"><%= link_to post.title, post, :class => "post-text" %>
         <% if user_signed_in? %>
-          - <%= User.find(post.user_id).username %>
+          <p class="post-index-author">written by <%= User.find(post.user_id).username %></p>
         <% end %>
+        <p class="post-index-creation-date"><%= post.created_at %></p>
       </li>
     <% end %>
 </ul>
