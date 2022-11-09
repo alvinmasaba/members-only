@@ -14,6 +14,6 @@ class TurboDeviseUserController < ApplicationController
      end
    end
  
-   self.responder = Responder
-   respond_to :html, :turbo_stream
- end
+  self.responder = Responder
+  respond_to :html, :turbo_stream
+end
